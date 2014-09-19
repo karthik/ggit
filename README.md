@@ -10,6 +10,6 @@ __Installation__
 ```r
 library(devtools)
 devtools::install_github("ropensci/ggit")
-
+```
 
 [![ropensci footer](http://ropensci.org/public_images/github_footer.png)](http://ropensci.org)
