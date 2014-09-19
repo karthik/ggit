@@ -1,0 +1,19 @@
+Package: ggit
+Title: Git Graphics
+Version: 0.1
+Authors@R: c(person("Karthik", "Ram", role = c("aut", "cre"), email =
+    "karthik.ram@gmail.com"), person("Stefan", "Widgren", role = "aut"))
+Maintainer: Karthik Ram <karthik.ram@gmail.com>
+Description: Provides visualization routines for Git logs
+Depends:
+    R (>= 3.1.1)
+License: MIT + file LICENSE
+LazyData: true
+Imports:
+    git2r,
+    scales,
+    ggplot2
+Collate:
+    'S4_classes.r'
+    'plot.r'
+    'punch_card.r'
