@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ropensci/ggit.png?branch=master)](https://travis-ci.org/ropensci/ggit)
+
 
 # Git Graphics
 
