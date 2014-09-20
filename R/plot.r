@@ -30,8 +30,8 @@
 ##' @return A \code{ggplot} chart
 ##' @keywords methods
 ##' @import ggplot2
+##' @import git2r
 ##' @importFrom scales date_format
-##' @include S4_classes.r
 ##' @export
 setMethod("plot",
           signature(x = "git_repository"),
@@ -46,9 +46,11 @@ setMethod("plot",
               df <- contributions(x, breaks = breaks, by = by)
 
               xlab <- switch(breaks,
-                             "month" = "Month",
-                             "week"  = "Week",
-                             "day"   = "Day")
+                             "year"    = "Year",
+                             "quarter" = "Quarter",
+                             "month"   = "Month",
+                             "week"    = "Week",
+                             "day"     = "Day")
               ylab <- "Number of commits"
               title <- sprintf("Commits on repository: %s", basename(workdir(x)))
 

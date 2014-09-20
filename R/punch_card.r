@@ -18,24 +18,24 @@
 ##'
 ##' @rdname punch_card-methods
 ##' @docType methods
-##' @param object The repository \code{object}.
+##' @param repo The repository
 ##' @return A \code{ggplot} chart
 ##' @keywords methods
 setGeneric("punch_card",
-           signature = "object",
-           function(object)
+           signature = "repo",
+           function(repo)
            standardGeneric("punch_card"))
 
 ##' @rdname punch_card-methods
 ##' @import ggplot2
-##' @include S4_classes.r
+##' @import git2r
 ##' @export
 setMethod("punch_card",
-          signature(object = "git_repository"),
-          function (object)
+          signature(repo = "git_repository"),
+          function (repo)
           {
               ## Extract information from repository
-              df <- as(object, "data.frame")
+              df <- as(repo, "data.frame")
               df$when <- as.POSIXlt(df$when)
               df$hour <- df$when$hour
               df$weekday <- df$when$wday
@@ -53,7 +53,7 @@ setMethod("punch_card",
                                        "Wednesday", "Tuesday", "Monday", "Sunday"))
               df$Hour <- as.integer(sapply(strsplit(df$index, "-"), "[", 2))
 
-              title <- sprintf("Punch card on repository: %s", basename(workdir(object)))
+              title <- sprintf("Punch card on repository: %s", basename(workdir(repo)))
 
               ggplot(df, aes_string(x = "Hour", y = "Weekday", size = "Commits")) +
                   geom_point() +
