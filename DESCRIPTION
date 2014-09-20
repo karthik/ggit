@@ -6,7 +6,7 @@ Authors@R: c(person("Karthik", "Ram", role = c("aut", "cre"), email =
 Maintainer: Karthik Ram <karthik.ram@gmail.com>
 Description: Provides visualization routines for Git logs
 Depends:
-    R (>= 3.1.1)
+    R (>= 3.0.2)
 License: MIT + file LICENSE
 LazyData: true
 Imports:
@@ -14,6 +14,6 @@ Imports:
     scales,
     ggplot2
 Collate:
-    'S4_classes.r'
+    'ggit-package.r'
     'plot.r'
     'punch_card.r'
